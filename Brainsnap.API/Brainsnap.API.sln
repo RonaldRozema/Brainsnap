@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsnap.API", "Brainsnap.API.csproj", "{0B525C71-0D97-4F4E-A4B4-AA70678832FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsnap.Domain", "..\Brainsnap.Domain\Brainsnap.Domain.csproj", "{924AA750-F5E9-411E-BC1F-4B8EBE43EBDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsnap.Services", "..\Brainsnap.Services\Brainsnap.Services.csproj", "{EC912076-D158-4B8D-8E53-59E6A3907480}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FED26620-C5C0-448A-99C5-0769DC7CA0B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsnap.Services.Tests", "..\Brainsnap.Services.Tests\Brainsnap.Services.Tests.csproj", "{67645220-9A21-4B05-B3AB-2C07E762DC30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsnap.DataAccess", "..\Brainsnap.DataAccess\Brainsnap.DataAccess.csproj", "{99F52622-5B49-44D7-8CE5-11FB92B9DC1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsnap.API.Tests", "..\Brainsnap.API.Tests\Brainsnap.API.Tests.csproj", "{F4DD0769-1768-4B1D-87B8-CFDA5A424278}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B525C71-0D97-4F4E-A4B4-AA70678832FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B525C71-0D97-4F4E-A4B4-AA70678832FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B525C71-0D97-4F4E-A4B4-AA70678832FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B525C71-0D97-4F4E-A4B4-AA70678832FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924AA750-F5E9-411E-BC1F-4B8EBE43EBDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924AA750-F5E9-411E-BC1F-4B8EBE43EBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924AA750-F5E9-411E-BC1F-4B8EBE43EBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924AA750-F5E9-411E-BC1F-4B8EBE43EBDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC912076-D158-4B8D-8E53-59E6A3907480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC912076-D158-4B8D-8E53-59E6A3907480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC912076-D158-4B8D-8E53-59E6A3907480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC912076-D158-4B8D-8E53-59E6A3907480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67645220-9A21-4B05-B3AB-2C07E762DC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67645220-9A21-4B05-B3AB-2C07E762DC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67645220-9A21-4B05-B3AB-2C07E762DC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67645220-9A21-4B05-B3AB-2C07E762DC30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F52622-5B49-44D7-8CE5-11FB92B9DC1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F52622-5B49-44D7-8CE5-11FB92B9DC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F52622-5B49-44D7-8CE5-11FB92B9DC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F52622-5B49-44D7-8CE5-11FB92B9DC1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4DD0769-1768-4B1D-87B8-CFDA5A424278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4DD0769-1768-4B1D-87B8-CFDA5A424278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4DD0769-1768-4B1D-87B8-CFDA5A424278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4DD0769-1768-4B1D-87B8-CFDA5A424278}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5EB0233-80E5-43E4-B215-2FCC918A2D66}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67645220-9A21-4B05-B3AB-2C07E762DC30} = {FED26620-C5C0-448A-99C5-0769DC7CA0B1}
+		{F4DD0769-1768-4B1D-87B8-CFDA5A424278} = {FED26620-C5C0-448A-99C5-0769DC7CA0B1}
+	EndGlobalSection
+EndGlobal
