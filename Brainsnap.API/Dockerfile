@@ -1,6 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
 WORKDIR /App
-EXPOSE 7076 5292
+EXPOSE 7076
+EXPOSE 5292
+EXPOSE 80
 
 # Copy everything
 COPY . ./
