@@ -5,6 +5,14 @@ namespace Brainsnap.Domain.Entities;
 
 public class IdeaEntity
 {
+	public IdeaEntity(int id)
+	{
+		Id = id;
+		Name = string.Empty;
+		Description = string.Empty;
+		DateAdded = DateTimeOffset.Now;
+	}
+
 	[JsonConstructor]
 	public IdeaEntity(int id, string name, string description, DateTimeOffset dateAdded)
 	{

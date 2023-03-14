@@ -20,7 +20,7 @@ public class IdeaRepository : IIdeaRepository
 
     public void Delete(int id)
     {
-        _context.Ideas.Remove(new IdeaEntity(id, string.Empty, string.Empty, DateTimeOffset.Now));
+        _context.Ideas.Remove(new IdeaEntity(id));
     }
 
     public int Save() => _context.SaveChanges();
