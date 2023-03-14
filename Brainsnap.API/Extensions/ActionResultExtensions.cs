@@ -6,11 +6,11 @@ namespace Brainsnap.API.Extensions;
 
 public static class ActionResultHelpers
 {
-	public static ActionResult<T> GetActionResult<T>(Func<string, T> executeRequest, string name) where T : class
+	public static ActionResult<T> GetActionResult<T, ArgT>(Func<ArgT, T> executeRequest, ArgT arg) where T : class
 	{
 		try
 		{
-			var result = executeRequest(name);
+			var result = executeRequest(arg);
 			return new OkObjectResult(result);
 		}
 		catch (Exception ex)

@@ -22,7 +22,7 @@ public class IdeaControllerTests
 
 		var actionResult = sut.Add(idea);
 
-		var result = actionResult as OkObjectResult;
+		var result = actionResult.Result as OkObjectResult;
 		result.Should().NotBeNull();
 	}
 
@@ -38,7 +38,7 @@ public class IdeaControllerTests
 
 		var actionResult = sut.Add(idea);
 
-		var result = actionResult as BadRequestObjectResult;
+		var result = actionResult.Result as BadRequestObjectResult;
 		result.Should().NotBeNull();
 	}
 }

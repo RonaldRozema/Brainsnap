@@ -18,5 +18,5 @@ public class IdeaController : ControllerBase
 
 	[HttpPost]
 	public ActionResult<Idea> Add([FromBody] Idea idea) =>
-		ActionResultHelpers.GetActionResult(_ideaService.Add, idea);
+		ActionResultHelpers.GetActionResult(_ideaService.Create, idea);
 }
