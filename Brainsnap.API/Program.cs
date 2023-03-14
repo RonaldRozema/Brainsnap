@@ -17,7 +17,9 @@ builder.Services.AddDbContext<PsqlDbContext>(options =>
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddTransient<IProjectService, ProjectService>();
+builder.Services.AddTransient<IIdeaService, IdeaService>();
 builder.Services.AddTransient<IProjectRepository, ProjectRepository>();
+builder.Services.AddTransient<IIdeaRepository, IdeaRepository>();
 
 var app = builder.Build();
 

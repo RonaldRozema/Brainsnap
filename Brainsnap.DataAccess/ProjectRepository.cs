@@ -13,11 +13,10 @@ public class ProjectRepository : IProjectRepository
         _context = context;
 	}
 
-    public ProjectEntity Add(Project project)
+    public ProjectEntity Add(ProjectEntity project)
     {
-        var entity = project.ToEntity();
-        _context.Add(entity);
-        return entity;
+        _context.Add(project);
+        return project;
     }
 
     public ProjectEntity? Find(string name) =>
