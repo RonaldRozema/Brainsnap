@@ -6,7 +6,7 @@ namespace Brainsnap.API.Extensions;
 
 public static class ActionResultHelpers
 {
-	public static ActionResult<T> GetActionResult<T, ArgT>(Func<ArgT, T> executeRequest, ArgT arg) where T : class
+	public static ActionResult<T> GetActionResult<T, ArgT>(Func<ArgT, T> executeRequest, ArgT arg)
 	{
 		try
 		{
