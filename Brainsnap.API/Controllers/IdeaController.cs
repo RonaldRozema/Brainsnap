@@ -19,4 +19,9 @@ public class IdeaController : ControllerBase
 	[HttpPost]
 	public ActionResult<Idea> Add([FromBody] Idea idea) =>
 		ActionResultHelpers.GetActionResult(_ideaService.Create, idea);
+
+	[HttpDelete]
+	[Route("{id}")]
+	public ActionResult<bool> Delete([FromRoute] int id) =>
+		ActionResultHelpers.GetActionResult(_ideaService.Delete, id);
 }

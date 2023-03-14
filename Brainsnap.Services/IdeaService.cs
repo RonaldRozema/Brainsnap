@@ -19,5 +19,11 @@ public class IdeaService : IIdeaService
         _ideaRepository.Save();
         return entity;
     }
+
+    public bool Delete(int id)
+    {
+        _ideaRepository.Delete(id);
+        return _ideaRepository.Save() > 0;
+    }
 }
 

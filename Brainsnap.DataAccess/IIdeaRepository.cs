@@ -5,6 +5,6 @@ namespace Brainsnap.DataAccess;
 public interface IIdeaRepository
 {
     IdeaEntity Add(IdeaEntity entityToAdd);
-    void Save();
+    void Delete(int id);
+    int Save();
 }
-
