@@ -18,5 +18,10 @@ public class IdeaRepository : IIdeaRepository
         return entityToAdd;
     }
 
-    public void Save() => _context.SaveChanges();
+    public void Delete(int id)
+    {
+        _context.Ideas.Remove(new IdeaEntity(id, string.Empty, string.Empty, DateTimeOffset.Now));
+    }
+
+    public int Save() => _context.SaveChanges();
 }
