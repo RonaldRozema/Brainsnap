@@ -20,7 +20,7 @@ public class IdeaServiceTests
 
 		ideaRepositoryMock.Setup(r => r.Add(It.IsAny<IdeaEntity>())).Returns(ideaEntityToAdd);
 
-		var result = sut.Add(ideaToAdd);
+		var result = sut.Create(ideaToAdd);
 
 		result.Name.Should().Be(ideaToAdd.Name);
 		result.Description.Should().Be(ideaToAdd.Description);
@@ -41,7 +41,7 @@ public class IdeaServiceTests
 
         ideaRepositoryMock.Setup(r => r.Add(It.IsAny<IdeaEntity>())).Returns(ideaEntityToAdd);
 
-        var result = sut.Add(ideaToAdd);
+        var result = sut.Create(ideaToAdd);
 
 		result.Name.Should().Be(ideaToAdd.Name);
 		result.Description.Should().Be(ideaToAdd.Description);
@@ -60,7 +60,7 @@ public class IdeaServiceTests
         var ideaToAdd = CreateIdea(51, 15);
         var sut = new IdeaService(ideaRepositoryMock.Object);
 
-		var act = () => sut.Add(ideaToAdd);
+		var act = () => sut.Create(ideaToAdd);
 
 		act.Should().Throw<ValidationException>();
 
@@ -76,7 +76,7 @@ public class IdeaServiceTests
         var ideaToAdd = CreateIdea(0, 15);
         var sut = new IdeaService(ideaRepositoryMock.Object);
 
-		var act = () => sut.Add(ideaToAdd);
+		var act = () => sut.Create(ideaToAdd);
 
 		act.Should().Throw<ValidationException>();
 
@@ -95,7 +95,7 @@ public class IdeaServiceTests
 
         ideaRepositoryMock.Setup(r => r.Add(It.IsAny<IdeaEntity>())).Returns(ideaEntityToAdd);
 
-        var result = sut.Add(ideaToAdd);
+        var result = sut.Create(ideaToAdd);
 
         result.Name.Should().Be(ideaToAdd.Name);
         result.Description.Should().Be(ideaToAdd.Description);
@@ -117,7 +117,7 @@ public class IdeaServiceTests
 
         ideaRepositoryMock.Setup(r => r.Add(It.IsAny<IdeaEntity>())).Returns(ideaEntityToAdd);
 
-        var result = sut.Add(ideaToAdd);
+        var result = sut.Create(ideaToAdd);
 
         result.Name.Should().Be(ideaToAdd.Name);
         result.Description.Should().Be(ideaToAdd.Description);
@@ -136,7 +136,7 @@ public class IdeaServiceTests
         var ideaToAdd = CreateIdea(15, 251);
         var sut = new IdeaService(ideaRepositoryMock.Object);
 
-		var act = () => sut.Add(ideaToAdd);
+		var act = () => sut.Create(ideaToAdd);
 
         act.Should().Throw<ValidationException>();
 
@@ -155,7 +155,7 @@ public class IdeaServiceTests
 
         ideaRepositoryMock.Setup(r => r.Add(It.IsAny<IdeaEntity>())).Returns(ideaEntityToAdd);
 
-        var result = sut.Add(ideaToAdd);
+        var result = sut.Create(ideaToAdd);
 
         result.Name.Should().Be(ideaToAdd.Name);
         result.Description.Should().Be(ideaToAdd.Description);
@@ -177,7 +177,7 @@ public class IdeaServiceTests
 
         ideaRepositoryMock.Setup(r => r.Add(It.IsAny<IdeaEntity>())).Returns(ideaEntityToAdd);
 
-        var result = sut.Add(ideaToAdd);
+        var result = sut.Create(ideaToAdd);
 
         result.Name.Should().Be(ideaToAdd.Name);
         result.Description.Should().Be(ideaToAdd.Description);
