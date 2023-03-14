@@ -18,7 +18,7 @@ public class ProjectService : IProjectService
     {
         if (name.Length > 50) throw new ValidationException("Project name is over 50 characters");
         if (_projectRepo.Exists(name)) return Find(name);
-        var newProject = _projectRepo.Add(new Project(name)).ToModel();
+        var newProject = _projectRepo.Add(new Project(name).ToEntity()).ToModel();
         _projectRepo.Save();
         return newProject;
     }

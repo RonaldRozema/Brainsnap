@@ -49,12 +49,12 @@ public class ProjectServiceTests
 		var name = "lessThen50Characters";
 		var sut = new ProjectService(projectRepoMock.Object);
 
-		projectRepoMock.Setup(r => r.Add(It.IsAny<Project>())).Returns(new ProjectEntity(name, DateTime.Now));
+		projectRepoMock.Setup(r => r.Add(It.IsAny<ProjectEntity>())).Returns(new ProjectEntity(name, DateTime.Now));
 
 		var result = sut.Create(name);
 
 		result.Name.Should().Be(name);
-		projectRepoMock.Verify(r => r.Add(It.IsAny<Project>()), Times.Once);
+		projectRepoMock.Verify(r => r.Add(It.IsAny<ProjectEntity>()), Times.Once);
 		projectRepoMock.Verify(r => r.Save(), Times.Once);
 	}
 
@@ -65,12 +65,12 @@ public class ProjectServiceTests
         var name = "50CharactersExcactlyqwertyuiopasdfghjklzxcvbnm1234";
         var sut = new ProjectService(projectRepoMock.Object);
 
-        projectRepoMock.Setup(r => r.Add(It.IsAny<Project>())).Returns(new ProjectEntity(name, DateTime.Now));
+        projectRepoMock.Setup(r => r.Add(It.IsAny<ProjectEntity>())).Returns(new ProjectEntity(name, DateTime.Now));
 
         var result = sut.Create(name);
 
         result.Name.Should().Be(name);
-        projectRepoMock.Verify(r => r.Add(It.IsAny<Project>()), Times.Once);
+        projectRepoMock.Verify(r => r.Add(It.IsAny<ProjectEntity>()), Times.Once);
         projectRepoMock.Verify(r => r.Save(), Times.Once);
     }
 
@@ -84,7 +84,7 @@ public class ProjectServiceTests
         var act = () => sut.Create(name);
 
 		act.Should().Throw<ValidationException>();
-        projectRepoMock.Verify(r => r.Add(It.IsAny<Project>()), Times.Never);
+        projectRepoMock.Verify(r => r.Add(It.IsAny<ProjectEntity>()), Times.Never);
         projectRepoMock.Verify(r => r.Save(), Times.Never);
     }
 }

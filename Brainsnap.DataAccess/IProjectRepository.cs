@@ -6,7 +6,7 @@ namespace Brainsnap.DataAccess;
 public interface IProjectRepository
 {
     ProjectEntity? Find(string name);
-    ProjectEntity Add(Project project);
+    ProjectEntity Add(ProjectEntity project);
     bool Exists(string name);
     void Save();
 }
