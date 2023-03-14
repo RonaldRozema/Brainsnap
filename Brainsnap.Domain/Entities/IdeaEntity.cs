@@ -1,7 +1,11 @@
-﻿namespace Brainsnap.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
+namespace Brainsnap.Domain.Entities;
 
 public class IdeaEntity
 {
+	[JsonConstructor]
 	public IdeaEntity(int id, string name, string description, DateTimeOffset dateAdded)
 	{
 		Id = id;
@@ -10,10 +14,12 @@ public class IdeaEntity
 		DateAdded = dateAdded;
 	}
 
-	public int Id { get; }
-	public string Name { get; }
-	public string Description { get; }
-	public DateTimeOffset DateAdded { get; }
+	public int Id { get; init; }
+	[MaxLength(50)]
+	public string Name { get; init; }
+	[MaxLength(250)]
+	public string Description { get; init; }
+	public DateTimeOffset DateAdded { get; init; }
 
 	public Idea ToIdea() => new Idea(Id, Name, Description, DateAdded);
 }

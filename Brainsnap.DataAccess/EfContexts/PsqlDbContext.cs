@@ -9,6 +9,7 @@ public class PsqlDbContext : DbContext
 	{ }
 
 	public DbSet<ProjectEntity> Projects { get; set; }
+    public DbSet<IdeaEntity> Ideas { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

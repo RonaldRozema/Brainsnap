@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using Brainsnap.Domain.Entities;
 
 namespace Brainsnap.Domain;
 
 public class Idea
 {
+	[JsonConstructor]
 	public Idea(string name, string? description)
 	{
 		Name = name;
