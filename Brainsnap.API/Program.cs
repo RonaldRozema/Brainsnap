@@ -1,16 +1,23 @@
 ﻿using Brainsnap.DataAccess;
 using Brainsnap.DataAccess.EfContexts;
 using Brainsnap.Services;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add authentication
-builder.Services.AddAuthentication().AddGoogle(googleOptions =>
-{
-    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-});
+builder.Services.AddIdentity<IdentityUser, IdentityRole>();
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = GoogleDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+    }).AddGoogle(googleOptions =>
+    {
+        googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? throw new Exception("Google ClientId cannot be empty");
+        googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? throw new Exception("Google ClientSecret cannot be empty"); ;
+    });
 
 // Add services to the container.
 
@@ -39,6 +46,7 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName.Equals("L
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
